@@ -33,6 +33,8 @@ public class ArrayListPractice {
         ArrayList<String> reversed = reverseArrayList(words);
         System.out.println("reversed = " + reversed);
         System.out.println(reverseArrayList(list));
+
+        System.out.println(fizzBuzzList());
     }
 
     /*
