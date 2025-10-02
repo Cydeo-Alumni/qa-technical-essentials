@@ -2,6 +2,7 @@ package java_review;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class ArrayListPractice {
     public static void main(String[] args) {
@@ -35,6 +36,9 @@ public class ArrayListPractice {
         System.out.println(reverseArrayList(list));
 
         System.out.println(fizzBuzzList());
+
+        List<Double> prices = new ArrayList<>(Arrays.asList(10.3, 5.7, 9.0));
+        System.out.println("Total : $" + calculateTotalOrder(prices));
     }
 
     /*
@@ -76,5 +80,16 @@ public class ArrayListPractice {
             }
         }
         return result;
+    }
+
+    /*
+    calculateTotalOrder: accepts list of prices and return total
+     */
+    public static double calculateTotalOrder(List<Double> prices) {
+        double total = 0;
+        for (double price : prices) {
+            total += price;
+        }
+        return total;
     }
 }
