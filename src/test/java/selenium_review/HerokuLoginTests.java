@@ -43,5 +43,9 @@ public class HerokuLoginTests {
         // Verify "You logged into a secure area!" banner is visible
         WebElement loggedInBanner = driver.findElement(By.xpath("//div[@id='flash']"));
         Assert.assertTrue(loggedInBanner.isDisplayed());
+
+        //click on logout button:
+        WebElement logoutBtn = driver.findElement(By.xpath("//a[.=' Logout']"));
+        logoutBtn.click();
     }
 }
