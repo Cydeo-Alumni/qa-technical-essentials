@@ -1,0 +1,6 @@
+Heroku
+    Examples:
+      | username | password               |
+      | tomsmith  | SuperSecretPassword!  |
+      | omsmith  | SuperSecretPasswo      |
+      | Tomsmit  | SupersecretPassword!   |
