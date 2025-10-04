@@ -3,4 +3,4 @@ Heroku
       | username | password               |
       | tomsmith  | SuperSecretPassword!  | You logged into a secure area!
       | omsmith  | SuperSecretPasswo      | Your username is invalid!
-      | Tomsmith  | SupersecretPassword!   |
+      | Tomsmith  | SupersecretPassword!   | Your password is invalid!
