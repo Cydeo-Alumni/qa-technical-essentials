@@ -39,5 +39,9 @@ public class HerokuLoginTests {
         //click on login button
         WebElement loginBtn = driver.findElement(By.xpath("//button[@type='submit']"));
         loginBtn.click();
+
+        // Verify "You logged into a secure area!" banner is visible
+        WebElement loggedInBanner = driver.findElement(By.xpath("//div[@id='flash']"));
+        Assert.assertTrue(loggedInBanner.isDisplayed());
     }
 }
