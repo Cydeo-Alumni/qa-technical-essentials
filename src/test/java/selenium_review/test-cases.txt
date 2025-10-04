@@ -1,6 +1,6 @@
 Heroku
     Examples:
       | username | password               |
-      | tomsmith  | SuperSecretPassword!  |
-      | omsmith  | SuperSecretPasswo      |
-      | Tomsmit  | SupersecretPassword!   |
+      | tomsmith  | SuperSecretPassword!  | You logged into a secure area!
+      | omsmith  | SuperSecretPasswo      | Your username is invalid!
+      | Tomsmith  | SupersecretPassword!   |
