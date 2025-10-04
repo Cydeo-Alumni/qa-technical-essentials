@@ -26,7 +26,7 @@ public class HerokuLoginTests {
 
     @AfterMethod
     public void tearDown() {
-        //driver.quit();
+        driver.quit();
     }
 
     @Test(priority = 1)
