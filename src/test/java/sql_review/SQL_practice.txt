@@ -1,0 +1,35 @@
+
+Patients database queries: https://www.sql-practice.com
+1) view all patients:
+    Select * from Patients;
+
+2) view patient first name and last name for all male patients
+    SELECT first_name, last_name, gender FROM patients
+    WHERE gender = 'M';
+
+3) view patient details that have height between 100 - 160
+    SELECT * from patients
+    WHERE height between 100 and 160;
+
+4) view patients whose weight is more than 100 order by weight
+SELECT * from patients
+where weight > 100
+order by weight;
+
+5) view patients who have Milk and Peanut butter allergies
+SELECT * from patients
+where allergy in ('Milk', 'Peanut Butter')
+
+6) view patients who are from Toronto and have Milk allergy
+SELECT * from patients
+where lower(city) = 'toronto' AND lower(allergies) = 'milk';
+
+----------Joins---------
+Inner join - returns matching data between tables
+
+1) View patient id, firstname, last name, diagnosis
+SELECT patients.patient_id, first_name, last_name, diagnosis
+FROM patients p JOIN admissions a
+ON p.patient_id = a.patient_id;
+--
+ - who came to hospital due to Headache
