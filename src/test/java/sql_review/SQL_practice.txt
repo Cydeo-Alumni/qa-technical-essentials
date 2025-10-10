@@ -31,5 +31,48 @@ Inner join - returns matching data between tables
 SELECT patients.patient_id, first_name, last_name, diagnosis
 FROM patients p JOIN admissions a
 ON p.patient_id = a.patient_id;
---
- - who came to hospital due to Headache
+
+2) View patient first and last names, province id and province names
+SELECT first_name, last_name, pn.province_id, province_name
+ FROm patients pt join province_names pn
+ ON pt.province_id = pn.province_id
+ where pt.province_id = 'AB';
+
+3) View patient id, firstname, last name, diagnosis, admission date
+where admission is between 	2018-06-06 - 2018-07-06
+============================
+====Functions====
+1) show the number of female patients
+
+SELECT COUNT(*)
+FROM patients
+WHERE gender = 'F';
+
+2) Show the maximum height among all patients
+SELECT MAX(height)
+FROM patients;
+
+3) show information about whose height is max height
+SELECT * , MAX(height)
+FROM patients;
+
+SELECT * FROM patients
+WHERE height = (SELECT MAX(height)
+                FROM patients);
+
+4) show information about second highest patient
+SELECT *, MAX(height) FROM patients
+WHERE height < (SELECT MAX(height)
+                FROM patients);
+
+
+select first_name, last_name, height
+from patients
+where height = (SELECT MAX(height) FROM patients
+				WHERE height < (SELECT MAX(height)
+                				FROM patients));
+
+5) show count of patients whose height is more than 150
+SELECT COUNT(*)
+FROM patients
+where height > 150;
