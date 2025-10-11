@@ -19,4 +19,17 @@ public class ReqResUsersTest {
         Assert.assertEquals(response.body().jsonPath().getInt("total"), 12);
         Assert.assertEquals(response.body().jsonPath().getString("data[0].email"), "michael.lawson@reqres.in");
     }
+
+    @Test
+    public void getSpecificUserTest() {
+        Response response = RestAssured.given().accept("application/json")
+                .when().get("https://reqres.in/api/users/2");
+        response.prettyPrint();
+        Assert.assertEquals(response.statusCode(), 200);
+        Assert.assertEquals(response.contentType(), "application/json; charset=utf-8");
+        Assert.assertEquals(response.jsonPath().getInt("data.id"), 2);
+        Assert.assertEquals(response.jsonPath().getString("data.email"), "janet.weaver@reqres.in");
+        Assert.assertEquals(response.jsonPath().getString("data.first_name"), "Janet");
+        Assert.assertEquals(response.jsonPath().getString("data.last_name"), "Weaver");
+    }
 }
