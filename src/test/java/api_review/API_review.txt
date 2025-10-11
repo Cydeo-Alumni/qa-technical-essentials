@@ -1,0 +1,32 @@
+
+REQUEST:
+    - API URL/Endpoint with HTTP method
+    - PARAMS(path, query)
+    - HEADERS
+    - BODY(if it not GET request)
+
+RESPONSE:
+    - Status code
+    - Headers
+    - Response body
+
+1) - GET request to https://reqres.in/api/users?page=2
+   - Accept - Application/Json
+   - x-api-key: reqres-free-v1
+   Body is not required for GET
+
+2) Get specific user
+- send GET request to https://reqres.in/api/users/2
+- with userId 2 as path param
+- Headers: - Accept - Application/Json
+           - x-api-key: reqres-free-v1
+Response validations:
+    status code : 200
+    Content type is json
+    response body matching:
+        "id": 2,
+        "email": "janet.weaver@reqres.in",
+        "first_name": "Janet",
+        "last_name": "Weaver",
+
+BREAK TILL 11:13 AM EST
