@@ -46,3 +46,7 @@ Validate response:
     body:
         "name": "Tester",
          "job": "SDET"
+================================
+
+Bearer token: I send post request to login endpoint with credentials and it returns the token.
+Then I use that token in other API requests as Bearer token
