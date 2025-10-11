@@ -1,4 +1,6 @@
 
+https://restfulapi.net/http-status-codes/
+
 REQUEST:
     - API URL/Endpoint with HTTP method
     - PARAMS(path, query)
@@ -28,3 +30,19 @@ Response validations:
         "email": "janet.weaver@reqres.in",
         "first_name": "Janet",
         "last_name": "Weaver",
+===================================
+
+POST request:
+Send POST request to https://reqres.in/api/users
+- Headers: - Accept/Content type - Application/Json
+           - x-api-key: reqres-free-v1
+- Body: {
+            "name": "Tester",
+            "job": "SDET"
+        }
+Validate response:
+    status code: 201
+    headers
+    body:
+        "name": "Tester",
+         "job": "SDET"

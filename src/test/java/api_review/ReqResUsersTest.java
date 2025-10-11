@@ -5,6 +5,9 @@ import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class ReqResUsersTest {
     @Test
     public void getAllUsersTest() {
@@ -31,5 +34,24 @@ public class ReqResUsersTest {
         Assert.assertEquals(response.jsonPath().getString("data.email"), "janet.weaver@reqres.in");
         Assert.assertEquals(response.jsonPath().getString("data.first_name"), "Janet");
         Assert.assertEquals(response.jsonPath().getString("data.last_name"), "Weaver");
+    }
+
+    @Test
+    public void createUserTest() {
+        Map<String, String> userData = new HashMap<>();
+        userData.put("name", "Tester");
+        userData.put("job", "SDET");
+
+        Response response = RestAssured.given().accept("application/json").contentType("application/json")
+                .header("x-api-key", "reqres-free-v1")
+                .and().body(userData) //serialization
+                .when().post("https://reqres.in/api/users");
+        response.prettyPrint();
+        Assert.assertEquals(response.statusCode(), 201);
+        Assert.assertEquals(response.contentType(), "application/json; charset=utf-8");
+        Assert.assertEquals(response.jsonPath().getString("name"), "Tester");
+        Assert.assertEquals(response.jsonPath().getString("job"), "SDET");
+        Assert.assertEquals(response.jsonPath().getString("createdAt").split("T")[0], "2025-10-11");
+
     }
 }
